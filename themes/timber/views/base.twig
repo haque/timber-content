@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" {{site.language_attributes}}> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" {{site.language_attributes}}> <!--<![endif]-->
+  <head>
+    <meta charset="{{ site.charset }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ site.theme.link }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ site.theme.link }}/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="{{ site.theme.link }}/assets/css/tooplate-main.css">
+    <link rel="stylesheet" href="{{ site.theme.link }}/assets/css/owl.css">
+    {{ function('wp_head') }}
+  </head>
+
+  <body class="{{body_class}}">
+    
+    <!-- Pre Header -->
+    {% if options.textarea is not empty %}
+    <div id="pre-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <span>{{ options.textarea }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="{{site.url}}">
+          <img src="{{TimberImage(options.hdlogo).src}}" alt="{{site.name}}">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          {% if cbv_main_menu.get_items %}
+          <ul class="navbar-nav ml-auto">
+            {% for item in cbv_main_menu.get_items %}
+            <li class="nav-item {{ item.classes | join(' ') }}">
+              <a class="nav-link" href="{{ item.link }}">{{ item.title }}
+                <span class="sr-only">(current)</span>
+              </a>
+              {% if item.get_children %}
+                <ul class="navbar-nav ml-auto">
+                  {% for child in item.get_children %}
+                  <li class="nav-item {{ child.classes | join(' ') }}">
+                    <a class="nav-link" href="{{ child.link }}">{{ child.title }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Starts Here -->
+    <section class="main-content">
+      {% block content %}
+        Sorry, no content here
+      {% endblock %}
+    </section>
+
+    <!-- Featred Ends Here -->
+
+
+    <!-- Subscribe Form Starts Here -->
+    <div class="subscribe-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <div class="line-dec"></div>
+              <h1>Subscribe on PIXIE now!</h1>
+            </div>
+          </div>
+          <div class="col-md-8 offset-md-2">
+            <div class="main-content">
+              <p>Integer vel turpis ultricies, lacinia ligula id, lobortis augue. Vivamus porttitor dui id dictum efficitur. Phasellus vel interdum elit.</p>
+              <div class="container">
+                <form id="subscribe" action="" method="get">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <fieldset>
+                        <input name="email" type="text" class="form-control" id="email" 
+                        onfocus="if(this.value == 'Your Email...') { this.value = ''; }" 
+                    	onBlur="if(this.value == '') { this.value = 'Your Email...';}"
+                    	value="Your Email..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-5">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="button">Subscribe Now!</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Subscribe Form Ends Here -->
+
+
+    
+    <!-- Footer Starts Here -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="logo">
+              <img src="{{TimberImage(options.ftlogo).src}}" alt="">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="footer-menu">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">How It Works ?</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="social-icons">
+              <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Ends Here -->
+
+
+    <!-- Sub Footer Starts Here -->
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="copyright-text">
+              <p>Copyright &copy; 2019 Company Name 
+                
+                - Design: <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sub Footer Ends Here -->
+
+    <script src="{{ site.theme.link }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="{{ site.theme.link }}/assets/js/custom.js"></script>
+    <script src="{{ site.theme.link }}/assets/js/owl.js"></script>
+
+  {{ function('wp_footer') }}
+  </body>
+
+</html>

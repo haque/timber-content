@@ -1,0 +1,12 @@
+{% if posts is not empty %}
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{{post.link}}">
+                <h4>{{ post.title }}</h4>
+                <p>{{post.content}}</p>
+            </a>
+        </li>
+    {% endfor %}
+<ul>
+{% endif %}

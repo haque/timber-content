@@ -1,0 +1,17 @@
+{{ dump(home) }}
+<div class="banner" style="background-image:url({{TimberImage(home.image).src}});">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="caption">
+          <h2>{{ home.title }}</h2>
+          <div class="line-dec"></div>
+          {{ home.description }}
+          <div class="main-button">
+            <a href="{{home.link.url}}">Order Now!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

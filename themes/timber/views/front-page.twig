@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+{% include 'home-banner.twig' %}
+{% if latest is not empty %}
+<ul>
+    {% for post in latest %}
+        <li>
+            <a href="{{post.link}}">
+                <h4>{{ post.title }}</h4>
+                <p>{{post.content}}</p>
+            </a>
+        </li>
+    {% endfor %}
+<ul>
+{% endif %}
+{% endblock %}
